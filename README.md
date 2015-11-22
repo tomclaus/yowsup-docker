@@ -2,7 +2,8 @@
 
 #Installation
 
-```docker pull tomclaus/yowsup-docker```
+ - ```docker build -t whatsapp .```
+ - ```docker build -t whatsapp .```
 
 #usage
 
@@ -14,13 +15,13 @@ yowsup will need access to a persistent storage to store generated keys data ins
 
 ### Step 1 request code
 ```
-docker run -v SOMEDIR:/root/.yowsup tgalal/yowsup registration --cc COUNTRYCODE --phone NUMBER --requestcode sms
+docker run whatsapp registration --cc COUNTRYCODE --phone NUMBER --requestcode sms
 ```
 
 or
 
 ```
-docker run -v SOMEDIR:/root/.yowsup tgalal/yowsup registration --cc COUNTRYCODE --phone NUMBER --requestcode voice
+docker run whatsappp registration --cc COUNTRYCODE --phone NUMBER --requestcode voice
 ```
 
 note that the phone number must also begin with the specified country code
@@ -28,7 +29,7 @@ note that the phone number must also begin with the specified country code
 ### Step 2 verify code
 
 ```
-docker run -v SOMEDIR:/root/.yowsup tgalal/yowsup registration --cc COUNTRYCODE --phone NUMBER --register CODE
+docker run whatsapp registration --cc COUNTRYCODE --phone NUMBER --register CODE
 ```
 
 Save the returned password as you will need it for login
@@ -37,7 +38,7 @@ Save the returned password as you will need it for login
 ### Command line client
 	
 ```
-docker run -v SOMEDIR:/root/.yowsup -it tgalal/yowsup demos --login PHONE:PASSWORD --yowsup
+docker run whatsapp demos --login PHONE:PASSWORD --yowsup
 ```
 
 This will start yowsup shell, type /L to login
@@ -64,12 +65,12 @@ Login, send a message, exit
 
 
 ```
-docker run -v SOMEDIR:/root/.yowsup tgalal/yowsup demos --login PHONE:PASSWORD --send CONTACT_PHONE MESSAGE
+docker runwhatsapp demos --login PHONE:PASSWORD --send CONTACT_PHONE MESSAGE
 ```
 
 ## E2E encryption
 To use e2e encryption in any of the clients, pass --moxie in any of the commands. For example:
 
 ```
-docker run -v SOMEDIR:/root/.yowsup -it tgalal/yowsup demos --login PHONE:PASSWORD --yowsup --moxie
+docker run whatsapp demos --login PHONE:PASSWORD --yowsup --moxie
 ```
